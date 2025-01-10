@@ -7,6 +7,7 @@ THNet is written in Python3.11, with the following dependencies:
 
 - [Panda]
 - [numpy]
+- [tqdm]
 
 ## Installation
 THNet is available on PyPI and can be downloaded and installed through pip:
