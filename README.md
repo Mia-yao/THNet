@@ -69,7 +69,8 @@ THNet has two functions: `HLA_inference` and `Mismatch_score`.
 |`-o, --output_file`|Write model output to PATH/TO/FOLDER|
 |`-n --Top_HLA_n`|Output the top n most probable HLA alleles for each HLA type. Default 3. The valid value of n is 1 to 5|
 
-* 1. Input data format
+* Input data format
+  
 The input file of HLA_inference is a .csv file (separated by delimiter ',') containing three columns: sample, cdr3, and v_gene. Note that the format of the V gene has to be: TRBVXX-XX (IMGT format). The vaild v gene list can be checked at `THNet/HLA_inference/parameter/v_gene_list.pkl`
 ```
 cdr3,v_gene,sample
@@ -85,9 +86,11 @@ An example of the input files for Mismatch_score can be referred to at `THNet/HL
 Note: A single sample should have around 10,000 TCR sequences for better model performance. Samples with every few TCRs will yield minimal HLA inference results. 
 
 * Output data format
+  
 The output includes two files: `HLA_inference.csv`, which contains the final HLA predictions, and `Top_hlas.csv`, listing the top n HLA alleles with the highest probabilities for each HLA type.
 
 * Demo usage
+  
 `THNet-Load_model HLA_inference -i input_file_path/input.csv -o output_folder_path -n 4`
 
 This command line takes `input.csv` as input data and outputs the result files `HLA_inference.csv` and `Top_hlas.csv` in the output_folder_path folder.
@@ -102,7 +105,7 @@ Note: The input data is provided in a file, and the output_folder_path specifies
 |`-i, --input_file`|Load input file that contains CDR3 beta sequences and V gene families from PATH/TO/FILE.| 
 |`-o, --output_file`|Write model output to PATH/TO/FOLDER|
 
-* 1. Input data format
+* Input data format
 The input file of HLA_inference is a .csv (separated by delimiter ',') file containing 17 columns: TX_ID,Rec_A_1,Rec_A_2,Rec_B_1,Rec_B_2,Rec_C_1,Rec_C_2,Rec_DQB1_1,Rec_DQB1_2,Rec_DRB1_1,Rec_DRB1_2,Don_A_1,Don_A_2,Don_B_1,Don_B_2,Don_C_1,Don_C_2,Don_DQB1_1,Don_DQB1_2,Don_DRB1_1,Don_DRB1_2。
 An example of the input files for Mismatch_score can be referred to at `THNet/Mismatch_score/example/input_example.csv`
 
@@ -111,9 +114,11 @@ Note: Some HLA information may be missing, but a capitalized 'X' should be place
 Note: So far, there are 208 valid HLA alleles (including both class I and II). The valid HLA alleles can be checked in the file `THNet/Mismatch_score/parameter/hla_list.pkl`. Any HLA allele not present in this list will trigger an error message.
 
 * Output data format
+  
 The output includes one file: `TX_Mismatch_score.csv`, which contains three columns: `TX_ID`,	`Class_I_MS`, and `Class_II_MS`. `Class_I_MS` and `Class_II_MS` indicate the mismatch score for HLA class I and HLA class II of the given TX_ID respectively.
 
 * Demo usage
+  
 `THNet-Load_model Mismatch_score -i input_file_path/input.csv -o output_folder_path`
 
 This command line takes `input.csv` as input data and outputs the result files `TX_Mismatch_score.csv` in the output_folder_path folder.
