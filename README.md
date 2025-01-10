@@ -13,7 +13,7 @@ THNet is written in Python3.11, with the following dependencies:
 THNet is available on PyPI and can be downloaded and installed through pip:
 
 
- ```pip install THNet```
+ ```pip install -i https://test.pypi.org/simple/ THNet==1.0.0```
 
 THNet is also available on [GitHub](https://github.com/Mia-yao/THNet/tree/main). The command line entry points can be installed by using the setup.py script:
 
