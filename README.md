@@ -60,7 +60,7 @@ Type `THNet --help` to display all the command line options:
 
 THNet has two functions: `HLA_inference` and `Mismatch_score`. 
 
-### HLA_inferenc
+### HLA_inference
 `HLA_inference` is for the inference of HLA based on one's T cell beta chain repertoire
 
 |Commands|Description|
