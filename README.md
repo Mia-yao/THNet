@@ -89,6 +89,7 @@ The output includes two files: `HLA_inference.csv`, which contains the final HLA
 
 * Demo usage
 `THNet-Load_model HLA_inference -i input_file_path/input.csv -o output_folder_path -n 4`
+
 This command line takes `input.csv` as input data and outputs the result files `HLA_inference.csv` and `Top_hlas.csv` in the output_folder_path folder.
 
 Note: The input data is provided in a file, and the output_folder_path specifies where the output files will be stored, as there are multiple output files.
@@ -106,6 +107,7 @@ The input file of HLA_inference is a .csv (separated by delimiter ',') file cont
 An example of the input files for Mismatch_score can be referred to at `THNet/Mismatch_score/example/input_example.csv`
 
 Note: Some HLA information may be missing, but a capitalized 'X' should be placed in the corresponding position of the table as a placeholder. All 17 columns are required. The mismatch score will be calculated using the available HLA alleles for that transplantation pair. If all class I or class II HLA alleles of the donor or recipient are missing, the `Class_I_MS` or `Class_II_MS` will be set to zero.
+
 Note: So far, there are 208 valid HLA alleles (including both class I and II). The valid HLA alleles can be checked in the file `THNet/Mismatch_score/parameter/hla_list.pkl`. Any HLA allele not present in this list will trigger an error message.
 
 * Output data format
@@ -113,6 +115,7 @@ The output includes one file: `TX_Mismatch_score.csv`, which contains three colu
 
 * Demo usage
 `THNet-Load_model Mismatch_score -i input_file_path/input.csv -o output_folder_path`
+
 This command line takes `input.csv` as input data and outputs the result files `TX_Mismatch_score.csv` in the output_folder_path folder.
 
 Note: The input data is provided in a file, and the output_folder_path specifies where the output files will be stored, as there are multiple output files.
