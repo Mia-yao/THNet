@@ -91,7 +91,7 @@ The output includes two files: `HLA_inference.csv`, which contains the final HLA
 
 * Demo usage
   
-`THNet-Load_model HLA_inference -i input_file_path/input.csv -o output_folder_path -n 4`
+`THNet HLA_inference -i input_file_path/input.csv -o output_folder_path -n 4`
 
 This command line takes `input.csv` as input data and outputs the result files `HLA_inference.csv` and `Top_hlas.csv` in the output_folder_path folder.
 
@@ -106,7 +106,8 @@ Note: The input data is provided in a file, and the output_folder_path specifies
 |`-o, --output_file`|Write model output to PATH/TO/FOLDER|
 
 * Input data format
-The input file of HLA_inference is a .csv (separated by delimiter ',') file containing 17 columns: TX_ID,Rec_A_1,Rec_A_2,Rec_B_1,Rec_B_2,Rec_C_1,Rec_C_2,Rec_DQB1_1,Rec_DQB1_2,Rec_DRB1_1,Rec_DRB1_2,Don_A_1,Don_A_2,Don_B_1,Don_B_2,Don_C_1,Don_C_2,Don_DQB1_1,Don_DQB1_2,Don_DRB1_1,Don_DRB1_2。
+The input file of HLA_inference is a .csv (separated by delimiter ',') file containing 17 columns: TX_ID,Rec_A_1,Rec_A_2,Rec_B_1,Rec_B_2,Rec_C_1,Rec_C_2,Rec_DQB1_1,Rec_DQB1_2,Rec_DRB1_1,Rec_DRB1_2,
+Don_A_1,Don_A_2,Don_B_1,Don_B_2,Don_C_1,Don_C_2,Don_DQB1_1,Don_DQB1_2,Don_DRB1_1,Don_DRB1_2。
 An example of the input files for Mismatch_score can be referred to at `THNet/Mismatch_score/example/input_example.csv`
 
 Note: Some HLA information may be missing, but a capitalized 'X' should be placed in the corresponding position of the table as a placeholder. All 17 columns are required. The mismatch score will be calculated using the available HLA alleles for that transplantation pair. If all class I or class II HLA alleles of the donor or recipient are missing, the `Class_I_MS` or `Class_II_MS` will be set to zero.
@@ -119,7 +120,7 @@ The output includes one file: `TX_Mismatch_score.csv`, which contains three colu
 
 * Demo usage
   
-`THNet-Load_model Mismatch_score -i input_file_path/input.csv -o output_folder_path`
+`THNet Mismatch_score -i input_file_path/input.csv -o output_folder_path`
 
 This command line takes `input.csv` as input data and outputs the result files `TX_Mismatch_score.csv` in the output_folder_path folder.
 
