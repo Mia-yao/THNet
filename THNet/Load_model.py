@@ -7,6 +7,10 @@ from THNet.HLA_inference.HLA_inference import HLA_inference
 from THNet.Mismatch_score.calculate_MS import MS_calculation
 import pandas as pd, numpy as np
 import os
+from pathlib import Path
+import logging
+from tqdm import tqdm
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 """Code to execute the functionality of THNet
@@ -29,6 +33,9 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 """
 
 def main():
+    # Configure logging
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
     parser = argparse.ArgumentParser(description="Initialize THNet")
 
     # Sub-command parser
@@ -53,45 +60,51 @@ def main():
     # Parse command-line arguments
     args = parser.parse_args()
 
-    # Check if input file exists
-    if not os.path.exists(args.input_path):
-        raise FileNotFoundError(f"Input file not found: {args.input_path}")
+    input_path = Path(args.input_path)
+    if not input_path.exists():
+        logging.error(f"Input file not found: {input_path}")
+        raise FileNotFoundError(f"Input file not found: {input_path}")
 
-    # Ensure the output directory exists
-    os.makedirs(args.output_folder, exist_ok=True)
+    try:
+        os.makedirs(args.output_folder, exist_ok=True)
+        logging.info(f"Output directory created or already exists: {args.output_folder}")
+    except Exception as e:
+        logging.error(f"Failed to create output directory: {args.output_folder}. Error: {e}")
+        raise ValueError(f"Failed to create output directory: {args.output_folder}. Error: {e}")
 
     # Read input file
     try:
-        input_file = pd.read_csv(args.input_path)
+        input_file = pd.read_csv(input_path)
+        logging.info(f"Successfully loaded input file: {input_path}")
     except Exception as e:
-        raise ValueError(f"Failed to load input file: {args.input_path}. Error: {e}")
+        logging.error(f"Failed to load input file: {input_path}. Error: {e}")
+        raise ValueError(f"Failed to load input file: {input_path}. Error: {e}")
 
     if args.command == "HLA_inference":
-        # Perform HLA inference
+        logging.info("Starting HLA inference...")
         model_prediction = Model_prediction()
         sample_hit_rank = model_prediction.Get_prediction(input_file)
 
         processor = HLA_inference()
 
-        # Write HLA_inference.csv
         pred_result = processor.hla_inference_df(sample_hit_rank)
-        pred_result_path = os.path.join(args.output_folder, 'HLA_inference.csv')
+        pred_result_path = Path(args.output_folder) / 'HLA_inference.csv'
         pred_result.to_csv(pred_result_path, index=False)
+        logging.info(f"HLA inference results saved to {pred_result_path}")
 
-        # Write Top_hlas.csv
         top_hla_df = processor.create_top_hla_df(sample_hit_rank, top_n=args.top_n)
-        top_hla_path = os.path.join(args.output_folder, 'Top_hlas.csv')
+        top_hla_path = Path(args.output_folder) / 'Top_hlas.csv'
         top_hla_df.to_csv(top_hla_path, index=False)
+        logging.info(f"Top HLA alleles saved to {top_hla_path}")
 
     elif args.command == "Mismatch_score":
-        # Perform Mismatch Score calculation
+        logging.info("Starting Mismatch Score calculation...")
         ms_calculation = MS_calculation()
         mismatch_pair = ms_calculation.process(input_file)
 
-        # Write TX_Mismatch_score.csv
-        mismatch_path = os.path.join(args.output_folder, 'TX_Mismatch_score.csv')
+        mismatch_path = Path(args.output_folder) / 'TX_Mismatch_score.csv'
         mismatch_pair.to_csv(mismatch_path, index=False)
-
+        logging.info(f"Mismatch score results saved to {mismatch_path}")
 
 if __name__ == '__main__':
     main()

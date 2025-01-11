@@ -1,0 +1,12 @@
+# MANIFEST.in
+# Control the files included or not in the source distribution
+# For further information, see
+# https://packaging.python.org/guides/using-manifest-in/
+
+include README.md
+include LICENSE
+recursive-include THNet/HLA_inference/example *
+recursive-include THNet/HLA_inference/models *
+recursive-include THNet/HLA_inference/parameter *
+recursive-include THNet/Mismatch_score/example *
+recursive-include THNet/Mismatch_score/parameter *
