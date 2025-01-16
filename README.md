@@ -17,7 +17,7 @@ THNet is available on PyPI and can be downloaded and installed through pip:
 
 THNet is also available on [GitHub](https://github.com/Mia-yao/THNet/tree/main). The command line entry points can be installed by using the setup.py script:
 
- ```$python setup.py install .```.
+ ```$python setup.py install ```
 
  Directory architecture:
 ```
