@@ -1,0 +1,5 @@
+Sample,HLA-A_1,HLA-A_2,HLA-B_1,HLA-B_2,HLA-C_1,HLA-C_2,HLA-DRB1_1,HLA-DRB1_2,HLA-DQA1_1,HLA-DQA1_2,HLA-DQB1_1,HLA-DQB1_2,HLA-DPA1_1,HLA-DPA1_2,HLA-DPB1_1,HLA-DPB1_2
+Sample1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,HLA-DPA1*01:03,NA,NA,NA
+Sample2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,HLA-DPA1*01:03,NA,NA,NA
+Sample3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,HLA-DPA1*01:03,NA,NA,NA
+"*The number of TCR read of each sample in example input file is too low, resulting in almost no prediction outcome.",,,,,,,,,,,,,,,,
