@@ -22,36 +22,36 @@ THNet is also available on [GitHub](https://github.com/Mia-yao/THNet/tree/main).
  Directory architecture:
 ```
  THNet/
-│   __init__.py
-│   README.md
-│   LICENSE
-│   setup.py
-│   Load_model.py
-│   MANIFEST.in
-└─── HLA_inference/
-    │   __init__.py
-    │   HLA_inference.py
-    │   model_prediction.py
-    └─── example/
-        │    input_example.csv
-    └─── models/   
-        │    models_1.pkl  
-        │    models_2.pkl 
-    └─── parameter/
-        │    fscore_dict.pkl
-        │    hla_auc.pkl
-        │    hla_list.pkl
-        │    hla_threshold.pkl      
-        │    v_gene_list.pkl
-└─── Mismatch_score/
-    │   __init__.py
-    │   calculate_MS.py
-    └─── example/
-        │    input_example.csv
-    └─── parameter/   
-        │    class1_distance.pkl  
-        │    class2_distance.pkl 
-        │    hla_list.pkl 
+├── __init__.py
+├── README.md
+├── LICENSE
+├── setup.py
+├── load_model.py
+├── MANIFEST.in
+├── HLA_inference/       ✅（移动到 THNet 目录下）
+│   ├── __init__.py
+│   ├── HLA_inference.py
+│   ├── model_prediction.py
+│   ├── example/
+│   │   └── input_example.csv
+│   ├── models/
+│   │   ├── models_1.pkl  
+│   │   └── models_2.pkl 
+│   └── parameter/
+│       ├── fscore_dict.pkl
+│       ├── hla_auc.pkl
+│       ├── hla_list.pkl
+│       ├── hla_threshold.pkl      
+│       └── v_gene_list.pkl
+├── Mismatch_score/      ✅（移动到 THNet 目录下）
+│   ├── __init__.py
+│   ├── calculate_MS.py
+│   ├── example/
+│   │   └── input_example.csv
+│   └── parameter/
+│       ├── class1_distance.pkl  
+│       ├── class2_distance.pkl 
+│       └── hla_list.pkl
 ```
 
 ## Usage
