@@ -28,7 +28,7 @@ THNet is also available on [GitHub](https://github.com/Mia-yao/THNet/tree/main).
 ├── setup.py
 ├── load_model.py
 ├── MANIFEST.in
-├── HLA_inference/       ✅（移动到 THNet 目录下）
+├── HLA_inference/       
 │   ├── __init__.py
 │   ├── HLA_inference.py
 │   ├── model_prediction.py
@@ -43,7 +43,7 @@ THNet is also available on [GitHub](https://github.com/Mia-yao/THNet/tree/main).
 │       ├── hla_list.pkl
 │       ├── hla_threshold.pkl      
 │       └── v_gene_list.pkl
-├── Mismatch_score/      ✅（移动到 THNet 目录下）
+├── Mismatch_score/      
 │   ├── __init__.py
 │   ├── calculate_MS.py
 │   ├── example/
