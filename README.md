@@ -84,7 +84,7 @@ CASSAGTVVGNTIYF,TRBV5-1,Sample1
 ```
 An example of the input files for Mismatch_score can be referred to at `THNet/HLA_inference/example/input_example.csv`
 
-Note: A single sample should have around 10,000 TCR sequences for better model performance. Samples with every few TCRs will yield minimal HLA inference results. 
+Note: A single sample should have around 10,000 TCR sequences for better model performance. Samples with very few TCRs will yield minimal HLA inference results. 
 
 * Output data format
   
