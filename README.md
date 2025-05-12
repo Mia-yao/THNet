@@ -124,5 +124,3 @@ The output includes one file: `TX_Mismatch_score.csv`, which contains three colu
 `THNet Mismatch_score -i input_file_path/input.csv -o output_folder_path`
 
 This command line takes `input.csv` as input data and outputs the result files `TX_Mismatch_score.csv` in the output_folder_path folder.
-
-Note: The input data is provided in a file, and the output_folder_path specifies where the output files will be stored, as there are multiple output files.
